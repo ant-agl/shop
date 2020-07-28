@@ -8,7 +8,7 @@ class Order extends Model
 {
     public function products()
     {
-        return $this->belongsToMany(product::class)->withPivot('count')->withTimestamps();
+        return $this->belongsToMany(Product::class)->withPivot('count')->withTimestamps();
     }
 
     public function scopeActive($query)
