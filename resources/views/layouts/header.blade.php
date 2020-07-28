@@ -42,10 +42,10 @@
 
             <ul class="navbar-nav">
                 @guest
-                <li class="nav-item">
+                <li class="nav-item @routeactive('login')">
                     <a class="nav-link" href="{{ route('login') }}">Войти</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @routeactive('register')">
                     <a class="nav-link" href="{{ route('register') }}">Зарегестрироваться</a>
                 </li>
                 @endguest
