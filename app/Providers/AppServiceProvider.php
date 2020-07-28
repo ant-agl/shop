@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Schema\Builder;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('adminroute', function () {
             return \Route::currentRouteNamed('admin*');
         });
+
+        Schema::defaultStringLength(191);
     }
 }
