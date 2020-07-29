@@ -36,15 +36,21 @@ class ProductController extends Controller
         return view('categories', compact('categories'));
     }
 
-    public function category(Request $request, $category)
+    public function category(Request $request, $categoryId)
     {
-        $category = Category::where('alias', $category)->first();
+        $category = Category::where('alias', $categoryId)->first();
+        if (is_null($category)) {
+            abort(404);
+        }
         return view('category', compact('category'));
     }
 
-    public function product($category, $product)
+    public function product($category, $productId)
     {
-        $product = Product::where('alias', $product)->first();
+        $product = Product::where('alias', $productId)->first();
+        if (is_null($product)) {
+            abort(404);
+        }
         return view('product', compact('product'));
     }
 }
