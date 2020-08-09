@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('index') }}">Админ панель</a>
-        </div>
+        <a class="navbar-brand" href="{{ route('index') }}">Админ панель</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @routeactive('admin.categories*')">

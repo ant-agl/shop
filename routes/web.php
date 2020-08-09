@@ -24,8 +24,8 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::group([
-        'namespace' => 'Admin',
         'prefix' => 'admin',
+        'namespace' => 'Admin',
         'as' => 'admin.'
     ], function () {
         Route::middleware('admin')->group(function () {
